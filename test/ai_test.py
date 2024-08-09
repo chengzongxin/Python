@@ -15,7 +15,7 @@ parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(parent_dir)
 
 # 现在可以导入 b.py
-import file_manager
+# import file_manager
 
 # 调用 b 文件中的函数或变量
 # file_manager.some_function()
@@ -41,24 +41,30 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 def generate_letter():
     job_desc = """
-    【岗位职责】
-    1.参与音视频类APP开发；
-    2.负责IOS 客户端主要功能模块日常开发及维护；
-    【任职要求】
-    1.计算机及相关专业，本科及以上学历，热爱计算机科学和互联网技术；
-    2.3年以上IOS应用开发经验,有完整的上线项目开发经验，具备独立开发App能力；
-    3.熟练掌握Objective-C，Swift语言；
-    4.对IOS的UI系统、动画效果、内存管理等有深入实践；
-    5.熟悉常用开源框架的使用，了解过开源框架实现机制；
-    7.具备良好的分析解决问题能力，能独立承担任务并控制开发进度；
-    8.对音视频、流媒体知识，有一定了解；
-    【加分项】
-    1.音视频实战经验者优先；
-    3.有性能调优实战经验者优先。
+    岗位职责：
+    1. 负责公司iOS应用程序的设计和开发以及对新技术的探索研究
+    2. 负责APP架构设计和性能优化
+    3. 对旧代码有一定的重构能力，确保软件质量和效率
+    4. 协助测试工程师识别并修复发现的问题
+    5. 配合团队进行app设计和规划，解决技术问题
+    6. 能够独立负责一个项目的开发和维护（熟悉app store发布流程）
+    7. 具有良好的表达和沟通能力，有较强的团队合作能力，较强的责任心
+
+    任职要求：
+    1. 本科及以上学历
+    2. 熟练使用Objective-C或Swift（或两者都会）
+    3. 至少有三年的iOS开发经验，有在App Store发布过应用的经验
+    4. 对iOS SDK有深入的理解，包括UIKit，Core Data，Core Animation等
+    5. 精通iOS的设计原则，模式和最佳实践
+    6. 能够理解和执行代码优化，以改进应用程序的性能
+
+    优先考虑：
+    1.有导航APP或者物流行业APP开发经验优先；
+    2. 有跨平台开发的经验，如React Native 、fluter、uniapp.
     """
 
     context = """
-    您好，周女士，我叫程宗鑫，我对您发布的职位非常感兴趣，我有丰富的开发经验，尤其擅长iOS、前端、uni跨平台、微信小程序、鸿蒙等项目开发。也熟悉Flutter、iOS底层原理、逆向工程和后端技术。我热衷于钻研技术、分析和解决难题，特别是在团队增效技术方面有深入研究。曾在土巴兔公司工作，参与了多个大规模项目，使用了许多前沿技术，覆盖了市面上的大部分功能点。方便的话，我可以发简历给您看看。
+    您好，我叫程宗鑫，我对您发布的职位非常感兴趣，我有丰富的开发经验，尤其擅长iOS、前端、uni跨平台、微信小程序、鸿蒙等项目开发。也熟悉Flutter、iOS底层原理、逆向工程和后端技术。我热衷于钻研技术、分析和解决难题，特别是在团队增效技术方面有深入研究。曾在土巴兔公司工作，参与了多个大规模项目，使用了许多前沿技术，覆盖了市面上的大部分功能点。方便的话，我可以发简历给您看看。
     """
     
     question = """
@@ -110,9 +116,10 @@ def generate_letter():
 
     if len(letter) < 10:
         print("生成失败")
+        
 
-    file_manager.write(langchain_prompt_template + "\n\n\n\n" + letter)
-
+    # file_manager.write(langchain_prompt_template + "\n\n\n\n" + letter)
+    print(letter)
     return letter
 
 

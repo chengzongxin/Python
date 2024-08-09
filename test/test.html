@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  from selenium import webdriver
+  options=webdriver.ChromeOptions()
+  options.add_experimental_option("debuggerAddress","127.0.0.1:9222")
+  chrome_driver = "D:/Python/Python37/Scripts/chromedriver.exe"
+  driver = webdriver.Chrome(chrome_driver,chrome_options=chrome_options)
+  print(driver.title)
+</body>
+</html>
